@@ -1,6 +1,6 @@
 package com.strategy;
 
-public class Dog implements Comparable {
+public class Dog implements Comparable<Dog> {
     int food;
 
     public Dog(int food) {
@@ -8,8 +8,7 @@ public class Dog implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Dog d = (Dog) o;
+    public int compareTo(Dog d) {
         if (this.food < d.food) {
             return -1;
         } else if (this.food > d.food) {
